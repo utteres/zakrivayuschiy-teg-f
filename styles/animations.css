@@ -1,26 +1,8 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ like-icon — для кнопки, оборачивающей иконку
-✦ like-icon — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
-/* Стили до анимаций */
-
 @keyframes indicator {
-  /* Safari fix */
   from {
     transform: translate(0);
   }
+
   to {
     transform: translate(4px);
   }
@@ -49,8 +31,6 @@
   opacity: 0;
 }
 
-/* Стили связанные с hover */
-
 .like-icon:hover .core {
   fill: var(--like-contour-color, #000000);
   transition: fill 0.3s linear;
@@ -61,8 +41,6 @@
   transition: fill 0.3s linear 0.05s;
 }
 
-/* Стили связанные с active */
-
 .like-icon:active .core {
   fill: var(--like-sparks-color, #ff0000);
   transition: fill 0.3s linear;
@@ -72,8 +50,6 @@
   fill: var(--like-sparks-color, #ff0000);
   transition: fill 0.3s linear 0.05s;
 }
-
-/* Стили добавляемые после клика */
 
 .like-icon.is-liked .core {
   fill: var(--like-sparks-color, #ff0000);
@@ -102,6 +78,7 @@
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.5);
   }
@@ -111,9 +88,8 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
-
-

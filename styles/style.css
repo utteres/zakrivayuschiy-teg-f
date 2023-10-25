@@ -277,7 +277,7 @@
 }
 
 @media (width < 376px) {
-  .dialog {
+  .modal {
     padding: 28px 34px 28px 40px;
     max-inline-size: 340px;
   }
@@ -329,7 +329,7 @@
   filter: hue-rotate(-234deg);
 }
 
-.dialog {
+.modal {
   border: 2px solid var(--text-color, #000000);
   padding: 25px 30px;
   color: var(--text-color, #000000);
@@ -340,29 +340,29 @@
   max-inline-size: 355px;
 }
 
-.dialog[open] {
+.modal[open] {
   display: grid;
-  gap: 30px;
   grid-template-rows: repeat(2, min-content);
+  gap: 30px;
 }
 
-.dialog::backdrop {
+.modal::backdrop {
   opacity: 0.75;
   background: var(--color-black, #000000);
 }
 
-.dialog__content {
+.modal__content {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.dialog__icon {
+.modal__icon {
   flex-shrink: 0;
   inline-size: 39px;
   block-size: 39px;
 }
 
-.dialog__button {
+.modal__button {
   inline-size: 100%;
 }
