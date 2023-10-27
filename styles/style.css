@@ -116,7 +116,7 @@
 .main {
   display: grid;
   justify-items: center;
-  gap: 57px;
+  gap: 52px;
   padding-block-end: 105px;
 }
 
@@ -151,38 +151,32 @@
 .card__img__label {
   position: absolute;
   z-index: 1;
-
   opacity: 0.5;
-
   color: var(--text-color, #000000);
   font-family: var(--second-font-family, "PressStart2P", fantasy);
-
   font-size: 14px;
   line-height: normal;
-
   text-transform: uppercase;
   text-shadow: 0 0 1px var(--page-background-color, #ffffff);
-  inset-inline-end: 13px;
-  inset-block-start: 24px;
-
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
   mix-blend-mode: hard-light;
 }
 
 .card__img {
   display: block;
-  aspect-ratio: 1 / 1;
-  inline-size: 100%;
   object-fit: cover;
-  object-position: center;
+  block-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  inline-size: 100%;
 }
 
 .card__content {
+  border-block-start: 2px solid var(--text-color);
   display: flex;
   flex-direction: column;
   gap: 27px;
   font-size: 18px;
   line-height: 116.667%;
-  margin-block-start: 27px;
   padding: 25px 30px 0 25px;
 }
 
@@ -214,7 +208,7 @@
 
 .button {
   position: relative;
-  padding: 10px 36px;
+  padding: 9px 17px;
   font-size: 14px;
   font-family: var(--second-font-family, "PressStart2P", fantasy);
   z-index: 1;
@@ -224,6 +218,10 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   appearance: none;
+}
+
+.card__like-button {
+  inline-size: 130px;
 }
 
 .button:focus {
@@ -276,6 +274,45 @@
   inline-size: 39px;
 }
 
+.modal {
+  border: 2px solid var(--text-color, #000000);
+  padding: 25px 30px;
+  color: var(--text-color, #000000);
+  font-family: var(--second-font-family, "PressStart2P", fantasy);
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: var(--page-background-color, #ffffff);
+  max-inline-size: 355px;
+  font-size: 14px;
+}
+
+.modal[open] {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
+}
+
+.modal::backdrop {
+  opacity: 0.75;
+  background: var(--color-black, #000000);
+}
+
+.modal__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal__icon {
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal__button {
+  inline-size: 100%;
+}
+
 @media (width < 376px) {
   .modal {
     padding: 28px 34px 28px 40px;
@@ -290,9 +327,10 @@
     block-size: 28px;
     inline-size: 28px;
   }
+
 }
 
-@supports ((-webkit-text-stroke: 1px #ffffff) or (text-shadow: 1px #ffffff)) {
+@supports (text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff) {
   .card__image__label {
     text-shadow: none;
     -webkit-text-stroke: 1px #ffffff;
@@ -326,42 +364,4 @@
 
 .filter_hue-rotate {
   filter: hue-rotate(-234deg);
-}
-
-.modal {
-  border: 2px solid var(--text-color, #000000);
-  padding: 25px 30px;
-  color: var(--text-color, #000000);
-  font-family: var(--second-font-family, "PressStart2P", fantasy);
-  line-height: 1.5;
-  text-transform: uppercase;
-  background: var(--page-background-color, #ffffff);
-  max-inline-size: 355px;
-}
-
-.modal[open] {
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  gap: 30px;
-}
-
-.modal::backdrop {
-  opacity: 0.75;
-  background: var(--color-black, #000000);
-}
-
-.modal__content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.modal__icon {
-  flex-shrink: 0;
-  inline-size: 39px;
-  block-size: 39px;
-}
-
-.modal__button {
-  inline-size: 100%;
 }
