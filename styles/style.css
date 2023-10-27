@@ -157,7 +157,10 @@
   font-size: 14px;
   line-height: normal;
   text-transform: uppercase;
-  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
+  text-shadow: 0px 1px 0px var(--page-background-color, #ffffff),
+    0px -1px 0px var(--page-background-color, #ffffff),
+    1px 0px 0px var(--page-background-color, #ffffff),
+    -1px 0px 0px var(--page-background-color, #ffffff);
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
@@ -330,7 +333,7 @@
 
 }
 
-@supports (text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff) {
+@supports (-webkit-text-stroke: 1px #ffffff) or (text-stroke: 1px #ffffff) {
   .card__image__label {
     text-shadow: none;
     -webkit-text-stroke: 1px #ffffff;
